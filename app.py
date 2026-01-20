@@ -7,7 +7,7 @@ def install_libs():
         import plotly
         import pandas
     except ImportError:
-        # These lines MUST be indented with 8 spaces or 2 tabs
+        
         subprocess.check_call([sys.executable, "-m", "pip", "install", "pandas", "plotly"])
 
 install_libs()
