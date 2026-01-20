@@ -1,16 +1,16 @@
-import os
 import subprocess
 import sys
+import os
 
 def install_libs():
     try:
         import plotly
-        import pandas 
+        import pandas
     except ImportError:
+        # These lines MUST be indented with 8 spaces or 2 tabs
+        subprocess.check_call([sys.executable, "-m", "pip", "install", "pandas", "plotly"])
 
-subprocess.check_call([sys.executable, "-m",
-                       "pip", "install" ,"pandas" ,
-                       "plotly"])
+install_libs()
 
 import streamlit as st
 import pandas as pd
