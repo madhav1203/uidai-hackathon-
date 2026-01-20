@@ -2,15 +2,11 @@ import subprocess
 import sys
 import os
 
-def install_libs():
-    try:
-        import plotly
-        import pandas
-    except ImportError:
-        
-        subprocess.check_call([sys.executable, "-m", "pip", "install", "pandas", "plotly"])
-
-install_libs()
+try:
+    import pandas
+    import plotly
+except ImportError:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "pandas", "plotly"])
 
 import streamlit as st
 import pandas as pd
